@@ -1,11 +1,36 @@
 <html>
 <head>
-
+  <link href="<%= url('/index.css') %>" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-  <p>
-    Hello There Everyone
-  </p>
+  <div class="board">
+    <div class="title">Mastermind</div>
+    <div class="play-area">
+      <div class ="old_guesses">
+        <% old_guesses.each_with_index do |guess,index| %>
+          <div class = "guess"><%= old_guesses[index] %> <%= old_responses[index] %>
+        <% end %>
+      </div>
+      <form>
+        <div class="guess-button">
+          <input type="submit" name = "Make Guess!">
+        </div>
+        <div class="guess-input-field">
+          <!--This will be repeated for however many options there are -->
+          <div id="guess1" class = "guesses"><input type="number" name = 'guess1'> </div>
+          <div id="guess2" class = "guesses"><input type="number" name = 'guess1'></div>
+          <div id="guess3" class = "guesses"><input type="number" name = 'guess1'></div>
+          <div id="guess4" class = "guesses"><input type="number" name = 'guess1'></div>
+        </div>
+      </form>
+      <div class="guess-response">
+        <strong>Hidden Code</strong><br>
+        <%= hidden_code.inspect %>
+      </div>
+    </div>
+
+    <div class="hidden-code"></div>
+  </div>
 </body>
 </html>

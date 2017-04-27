@@ -1,0 +1,46 @@
+body{
+  background-image: url("wood_background.jpg");
+}
+
+.board{
+  background: white;
+  width: 900px;
+  height: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  border-radius: 50px;
+  border-width: 20px;
+
+}
+.title{
+  width: 900px;
+  height: 100px;
+  text-align: center;
+
+}
+.guess-input-field{
+  height: 50px;
+}
+
+.guesses{
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+}
+
+#guess1 {
+  background-color: red;
+}
+
+#guess2{
+  background-color: blue;
+}
+
+#guess3{
+  background-color: yellow;
+}
+
+#guess4{
+  background-color: green;
+}
