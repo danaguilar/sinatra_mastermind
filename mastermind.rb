@@ -10,7 +10,7 @@ end
 
 def init_game
   @game = Mastermind.new(['1','2','3','4'],4,12)
-  make_new_code([1,2,3,4])
+  make_new_code(['1','2','3','4'])
 end
 
 def make_guess(guess)
@@ -23,5 +23,6 @@ get '/' do
   make_guess("1,1,1,1")
   make_guess("2,2,2,2")
   make_guess("3,4,1,1")
-  erb :index, :locals => {:hidden_code => @game.board.original, :old_guesses => @game.old_guesses, :old_responses => @game.old_responses}
+  checked_guess = @game.board.compare_codes
+  erb :index, :locals => {:hidden_code => @game.board.original, :old_guesses => @game.old_guesses,:old_responses => @game.old_responses}
 end

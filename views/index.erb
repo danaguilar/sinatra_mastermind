@@ -1,27 +1,42 @@
 <html>
 <head>
   <link href="<%= url('/index.css') %>" rel="stylesheet" type="text/css" />
+  <script src="index.js"></script>
 </head>
 
 <body>
   <div class="board">
     <div class="title">Mastermind</div>
     <div class="play-area">
-      <div class ="old_guesses">
+      <div class ="old_guess_container">
         <% old_guesses.each_with_index do |guess,index| %>
-          <div class = "guess"><%= old_guesses[index] %> <%= old_responses[index] %>
+          <div class = "old_guesses">
+            <% old_guesses[index].each do |number| %>
+              <% if number == "1" %> <div class = "guesses one"></div> <% end %>
+              <% if number == "2" %> <div class = "guesses two"></div> <% end %>
+              <% if number == "3" %> <div class = "guesses three"></div> <% end %>
+              <% if number == "4" %> <div class = "guesses four"></div> <% end %>
+            <% end %>
+            <div class="clues">
+              <% old_responses[index].each do |number| %>
+                <%if number == 1%> <div class="clue correct"></div><% end %>
+                <%if number == 0%> <div class="clue close"></div><% end %>
+                <%if number == ' '%> <div class="clue miss"></div><% end %>
+              <% end %>
+            </div>
+          </div>
         <% end %>
       </div>
       <form>
-        <div class="guess-button">
-          <input type="submit" name = "Make Guess!">
-        </div>
         <div class="guess-input-field">
           <!--This will be repeated for however many options there are -->
-          <div id="guess1" class = "guesses"><input type="number" name = 'guess1'> </div>
-          <div id="guess2" class = "guesses"><input type="number" name = 'guess1'></div>
-          <div id="guess3" class = "guesses"><input type="number" name = 'guess1'></div>
-          <div id="guess4" class = "guesses"><input type="number" name = 'guess1'></div>
+          <div class = "guesses one" onclick="cycleValue(event)"></div>
+          <div class = "guesses two" onclick="cycleValue(event)"></div>
+          <div class = "guesses three" onclick="cycleValue(event)"></div>
+          <div class = "guesses four" onclick="cycleValue(event)"></div>
+        </div>
+        <div class="guess-button">
+          <input type="submit" name = "Make Guess!" value = "GUESS!">
         </div>
       </form>
       <div class="guess-response">

@@ -3,7 +3,7 @@ body{
 }
 
 .board{
-  background: white;
+  background: darkgray;
   width: 900px;
   height: 1000px;
   margin-left: auto;
@@ -21,26 +21,81 @@ body{
 }
 .guess-input-field{
   height: 50px;
+  display: inline-block;
+
+}
+
+.guess-button{
+  display: inline-block;
+  width: 30px;
+}
+
+.guess-button button{
+  width: 30px;
+  margin-bottom: 20px;
+}
+
+.play-area{
+  margin-left: auto;
+  margin-right: auto;
+  width: 350px;
+}
+
+.clues{
+  display: inline-block;
+  padding-left: 15px;
+}
+
+.clue{
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.clue_bottom{
+  margin-bottom: 10px;
+}
+
+.correct{
+  background-color: green;
+}
+
+.close{
+  background-color: orange;
+}
+
+.miss{
+  background-color: lightgray;
+}
+
+.old_guesses{
+  display: inline-block;
+  padding-bottom: 30px;
 }
 
 .guesses{
   width: 50px;
   height: 50px;
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
   display: inline-block;
 }
 
-#guess1 {
-  background-color: red;
+.one{
+  background-color: crimson;
 }
 
-#guess2{
-  background-color: blue;
+.two{
+  background-color: aquamarine ;
 }
 
-#guess3{
-  background-color: yellow;
+.three{
+  background-color: goldenrod;
 }
 
-#guess4{
-  background-color: green;
+.four{
+  background-color: darkgreen;
 }
