@@ -17,6 +17,7 @@ body{
   width: 900px;
   height: 100px;
   text-align: center;
+  padding-top: 10px;
 
 }
 .guess-input-field{
@@ -51,10 +52,9 @@ body{
   height: 15px;
   border-radius: 15px;
   display: inline-block;
-  margin-bottom: 20px;
 }
 .clue_bottom{
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .correct{
@@ -73,6 +73,9 @@ body{
   display: inline-block;
   padding-bottom: 30px;
 }
+.hidden{
+  display: none;
+}
 
 .guesses{
   width: 50px;
@@ -84,6 +87,9 @@ body{
   display: inline-block;
 }
 
+.guess-response{
+  display: none;
+}
 .one{
   background-color: crimson;
 }
