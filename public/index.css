@@ -13,13 +13,6 @@ body{
   border-width: 20px;
 
 }
-.title{
-  width: 900px;
-  height: 100px;
-  text-align: center;
-  padding-top: 10px;
-
-}
 .guess-input-field{
   height: 50px;
   display: inline-block;
@@ -37,9 +30,9 @@ body{
 }
 
 .play-area{
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 400px;
   width: 350px;
+  padding-top: 30px;
 }
 
 .clues{
@@ -77,6 +70,20 @@ body{
   display: none;
 }
 
+.blank{
+  background-color: black;
+}
+
+form{
+  padding-bottom: 15px;
+}
+
+
+.secret-code-container{
+  position:absolute;
+  top: 100px;
+  left: 275px
+}
 .guesses{
   width: 50px;
   height: 50px;
@@ -89,6 +96,10 @@ body{
 
 .guess-response{
   display: none;
+}
+
+.zero{
+  background-color: white;
 }
 .one{
   background-color: crimson;

@@ -5,8 +5,35 @@
 
 <body>
   <div class="board">
-    <div class="title"><h1>Mastermind</h1></div>
+    <div class="secret-code-container">
+      <div class="title"><h1>Mastermind</h1></div>
+      <div class="reset">
+        <form>
+          <input type="submit" value "reset" name = 'reset'>
+        </form>
+      </div>
+      <H2> Secret Code </H2>
+      <% if won %>
+      <H3> CRACKED! </h3>
+        <% hidden_code.each do |number| %>
+          <% if number == "1" %> <div class = "guesses one"></div> <% end %>
+          <% if number == "2" %> <div class = "guesses two"></div> <% end %>
+          <% if number == "3" %> <div class = "guesses three"></div> <% end %>
+          <% if number == "4" %> <div class = "guesses four"></div> <% end %>
+        <% end %>
+      <h4> Found in <%=turn-1%> <%=turn-1 > 1 ? "guesses" : "guess" %> </h4>
+      <% else %>
+        <% 4.times do %>
+          <div class = "guesses blank"></div>
+        <% end %>
+      <% end %>
+    </div>
     <div class="play-area">
+      <% if won %>
+        <h2> Success! </h2>
+      <% else %>
+        <h2> <%=9-turn%> <%=(9-turn)>1 ? "guesses" : "guess" %> left </h2>
+      <% end %>
       <div class ="old_guess_container">
         <% old_guesses.each_with_index do |guess,index| %>
           <div class = "old_guesses">
@@ -44,6 +71,17 @@
           <input type="submit">
         </div>
       </form>
+
+      <div class="old_guess_container">
+        <% (8-turn).times do %>
+          <div class="old_guesses">
+            <% 4.times do %>
+              <div class = "guesses"></div>
+            <% end %>
+          </div>
+          <% end %>
+      </div>
+
       <div class="guess-response">
         <strong>Hidden Code</strong><br>
         <%= hidden_code.inspect %>
